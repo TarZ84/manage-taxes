@@ -1,0 +1,22 @@
+
+<div *ngFor="let error of errorList" class="error" >{{error}}</div>
+
+<label for="products"><b>Sélection produit:</b></label><br/><br/>
+
+Produit :
+<select  name="products" id="products"  [(ngModel)]="selectedProduct" required>
+    <option   *ngFor="let product of listProducts" [ngValue]="product">{{product.title}}</option>
+</select>
+
+Prix :
+<select name="prices" id="prices" [(ngModel)]="selectedProduct.selectedPriceHT">
+  <option   *ngFor="let price of selectedProduct?.pricesHt" value="{{price}}">{{price}}</option>
+</select>
+
+Quantité :
+<select name="quantite" id="quantite"  [(ngModel)]="selectedProduct.quantity">
+  <option   *ngFor="let qtite of selectedProduct.id?[1,2,3]:[]" value="{{qtite}}">{{qtite}}</option>
+</select>
+
+<button (click)="addProduct($event)" class="btn">Ajouter</button>
+<button (click)="removeAllProduct($event)" class="btn">Annuler tout</button>

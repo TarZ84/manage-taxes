@@ -1,0 +1,51 @@
+[
+  {
+    "id": "lv",
+    "title":"livres",
+    "isNecessary": false,
+    "isImported":false,
+    "pricesHt":[ 12.49]
+  },
+  {
+    "id": "cd",
+    "title":"CD musical",
+    "isNecessary": false,
+    "isImported":false,
+    "pricesHt":[ 14.99]
+  },
+  {
+    "id": "bc",
+    "title":"barres de chocolat",
+    "isNecessary": true,
+    "isImported":false,
+    "pricesHt": [0.85]
+  },
+  {
+    "id": "btci",
+    "title":"boîtes de chocolats importée",
+    "isNecessary": true,
+    "isImported":true,
+    "pricesHt": [10, 11.25]
+  },
+  {
+    "id": "fpi",
+    "title":"flacons de parfum importé",
+    "isNecessary": false,
+    "isImported":true,
+    "pricesHt": [47.50, 27.99 ]
+  },
+  {
+    "id": "fp",
+    "title":"flacons de parfum",
+    "isNecessary": false,
+    "isImported":false,
+    "pricesHt": [18.99 ]
+  },
+  {
+    "id": "bpmig",
+    "title":"boîtes de pilules contre la migraine",
+    "isNecessary": true,
+    "isImported":false,
+    "pricesHt": [9.75]
+  }
+]

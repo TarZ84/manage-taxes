@@ -1,0 +1,16 @@
+
+<ng-container *ngIf="!isEmptyFct(sharedService.listSelectedProducts$ | async); else emptycontainer">
+  <div class="centerBlock">
+    <div><b>#### Récapitulatif de la commande : </b></div><br/><br/>
+    <div *ngFor="let p of (sharedService.listSelectedProducts$ | async)" >
+      * {{p.quantity}} {{p.title}} à {{p.selectedPriceHT | currency : 'EUR':'symbol':(p.selectedPriceHT % 1 == 0) ?'.0-0':'.2-2':'fr'}} : {{p.priceTTC | currency : 'EUR':'symbol':(p.priceTTC % 1 == 0) ?'.0-0':'.2-2':'fr'}}
+    </div>
+
+    <br>
+
+    <div>>> Montant des taxes : {{getTotalTaxes() | async | currency : 'EUR':'symbol':((getTotalTaxes() | async) % 1 == 0) ?'.0-0':'.2-2':'fr'}}</div>
+    <div>>> Totale : {{getTotalPrices() | async | currency : 'EUR':'symbol':((getTotalPrices() | async) % 1 == 0) ?'.0-0':'.2-2':'fr'}}</div>
+
+  </div>
+</ng-container>
+<ng-template #emptycontainer><div class="centerBlock"><b>Aucun produit sélectionné...</b></div></ng-template>

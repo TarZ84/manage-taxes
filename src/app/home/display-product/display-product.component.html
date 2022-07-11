@@ -1,0 +1,23 @@
+<ng-container *ngIf="!isEmptyFct(sharedService.listSelectedProducts$|async)">
+  <br/><br/>
+  <div><b>Contenu Panier :: </b> </div><br/>
+  <table>
+    <tr>
+      <th>Quantité</th>
+      <th>Produit</th>
+      <th>Prix HT</th>
+      <th>Prix TTC</th>
+    </tr>
+
+    <tr *ngFor="let p of (sharedService.listSelectedProducts$|async)">
+      <td>{{p.quantity}}</td>
+      <td>{{p.title}}</td>
+      <td>{{p.selectedPriceHT| currency : 'EUR':'symbol':(p.selectedPriceHT % 1 == 0) ?'.0-0':'.2-2':'fr'}}</td>
+      <td>{{p.priceTTC| currency : 'EUR':'symbol':(p.priceTTC % 1 == 0) ?'.0-0':'.2-2':'fr'}}</td>
+    </tr>
+
+  </table>
+  <br>
+  <button routerLink="/home/recap" class="btn alignRight">Récapitulatif</button>
+
+</ng-container>
